@@ -2,10 +2,17 @@
 
 ### requirements
 
-- doesn't work on windows (nanoemoji requires every svg file to be passed as a path which is too long for windows)
-- twemoji (submoduled here)
-- nanoemoji/fonttools (install requirements in poetry.lock with [poetry](https://python-poetry.org/))
+- [twemoji](https://github.com/twitter/twemoji) (submoduled here)
+- [nanoemoji](https://github.com/googlefonts/nanoemoji)/[fonttools](https://github.com/fonttools/fonttools) (install
+  requirements in [poetry.lock](poetry.lock) with [poetry](https://python-poetry.org/))
 
 ### usage
 
-run the [main.py](main.py) file
+- run the [main.py](main.py) file
+- the final font file will be at `build/TwemojiCOLR0.otf`
+
+### note
+
+for [technical reasons](https://github.com/googlefonts/nanoemoji/issues/436#issuecomment-1256468336), the font generates
+blank glyphs for the characters `#*1234567890`. uncomment the code at the bottom of [main.py](main.py) to fix this
+behavior, [at the cost of breaking the "keycap" emojis](https://github.com/googlefonts/nanoemoji/issues/436#issuecomment-1256540076)
